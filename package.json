@@ -1,0 +1,29 @@
+{
+  "name": "shim-demo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "browserify . -d -o bundle.js",
+    "bundleNoParse": "browserify . -d --ig --noParse ./vendor/jquery.js --noParse ./vendor/angular.js -o bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^3.32.1",
+    "browserify-shim": "^3.3.1"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./vendor/jquery.js",
+    "angular": "./vendor/angular.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "angular": "angular"
+  }
+}
